@@ -1,0 +1,16 @@
+en:
+  simple_form:
+    placeholders:
+      bill:
+        reference: Reference number of your quote
+        amount: Outstanding amount in euros
+    labels:
+      bill:
+        reference: Reference number
+        amount: Amount in euros
+
+  helpers:
+    submit:
+      quote:
+        create: Create bill
+        update: Update bill
