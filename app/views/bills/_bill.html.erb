@@ -1,0 +1,12 @@
+<div class="bill">
+  <%= link_to bill.reference, bill_path(bill) %>
+  <div class="bill__actions">
+    <%= button_to "Delete",
+                  bill_path(bill),
+                  method: :delete,
+                  class: "btn btn--light" %>
+    <%= link_to "Edit",
+                edit_bill_path(bill),
+                class: "btn btn--light" %>
+  </div>
+</div>
