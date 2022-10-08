@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first:
+  reference: First bill
+  amount: 100.5
+  approved: false
+
+second:
+  reference: Second bill
+  amount: 1500.65
+  approved: false
