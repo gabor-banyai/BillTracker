@@ -3,11 +3,11 @@ en:
     placeholders:
       bill:
         reference: Reference number of your quote
-        amount: Outstanding amount in euros
+        amount: Outstanding amount in kWh
     labels:
       bill:
         reference: Reference number
-        amount: Amount in euros
+        amount: Amount in kWh
 
   helpers:
     submit:
