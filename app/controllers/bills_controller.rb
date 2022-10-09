@@ -1,5 +1,5 @@
 class BillsController < ApplicationController
-  before_action :set_bill, only: [:show, :edit, :update, :destroy]
+  before_action :set_bill, only: [:show, :edit, :update, :destroy, :approve]
 
   def index
     @bills = Bill.all
@@ -36,6 +36,16 @@ class BillsController < ApplicationController
   def destroy
     @bill.destroy
     redirect_to bills_path, notice: "Bill was successfully deleted."
+  end
+
+  def approve
+    @bill = Bill.find(params[:id])
+    @bill.approved = true
+    if @bill.save
+      redirect_to bills_path, notice: "Bill was successfully approved."
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
