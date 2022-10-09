@@ -1,0 +1,8 @@
+<% if current_user.manager? %>
+    <h2>Approve bill</h2>
+  
+    <%= form_tag approve_bills_path(@bill), method: 'post' do %>
+      <%= hidden_field_tag :id, @bill.id -%>
+      <%= submit_tag 'Approve', class: "btn btn-primary" -%>
+    <% end -%>
+<% end %>
