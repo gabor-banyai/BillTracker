@@ -1,10 +1,37 @@
-<main class="container">
-  <div class="header">
-    <h1>Bills</h1>
-    <%= link_to "New bill",
-                new_bill_path,
-                class: "btn btn--primary" %>
-  </div>
+<h1>Uploaded Bills</h1>
 
-  <%= render @bills %>
-</main>
+<p>The Billtracker contains <%= Bill.count %> bills in total. You are logged in as a(n) <%= current_user.role %>.</p>
+
+<br>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Reference number</th>
+      <th scope="col">Amount in kWh</th>
+      <th scope="col">Approved</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bills.each do |bill| %>
+        <tr>
+            <th scope="row"><%= bill.id %></th>
+             <td><%= bill.reference %></td>
+             <td><%= bill.amount %></td>
+            <td><%= bill.approved %></td>
+            <td><%= link_to 'Edit/Approve', edit_bill_path(bill) %></td>
+            <td><%= link_to "Delete", bill_path(bill), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></td>
+         </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+<%= link_to "Add New Bill", new_bill_path, class:"btn btn-light" %>
+</div>
