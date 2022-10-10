@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Billtracker
 
-Things you may want to cover:
+A Ruby on Rails application for updating and approving energy bills.
 
-* Ruby version
+During development I used Rails version 7.0.4 and PostgreSQL version 14.5.
 
-* System dependencies
+Additional gems used in the project: pg, devise, simple_form, hotwire-rails, bootstrap-sass, jquery-rails.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
