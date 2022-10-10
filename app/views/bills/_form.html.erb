@@ -4,8 +4,9 @@
       <%= bill.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
-
+  <p> Reference number: </p>
   <%= f.input :reference, input_html: { autofocus: true } %><br>
+  <p> Amount in kWh: </p>
   <%= f.input :amount, input_html: { autofocus: true } %><br>
   <%= f.submit class: "btn btn-primary" %><br>
 <% end %>
