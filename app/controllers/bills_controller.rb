@@ -48,6 +48,11 @@ class BillsController < ApplicationController
     end
   end
 
+  def list
+    @bills = Bill.order("#{params[:column]} asc")
+    render(partial: 'bills', locals: { bills: @bills })
+  end
+
   private
 
   def set_bill

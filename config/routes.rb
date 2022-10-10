@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   resources :bills do
     post :approve, on: :collection, as: :approve
+    collection do
+      get 'list'
+    end
   end
 end

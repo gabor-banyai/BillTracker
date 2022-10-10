@@ -1,0 +1,29 @@
+<%= turbo_frame_tag "bills" do %>
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Reference number</th>
+        <th scope="col"><%= sort_link(column: "amount", label: "Amount in kWh") %></th>
+        <th scope="col"><%= sort_link(column: "approved", label: "Approved") %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bills.each do |bill| %>
+          <tr>
+              <th scope="row"><%= bill.id %></th>
+              <td><%= bill.reference %></td>
+              <td><%= bill.amount %></td>
+              <td><%= bill.approved %></td>
+              <td><%= link_to 'Edit/Approve', edit_bill_path(bill) %></td>
+              <td><%= link_to "Delete", bill_path(bill), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
